@@ -1,0 +1,45 @@
+version: 2
+
+before:
+  hooks:
+    - make build
+
+builds:
+  - builder: prebuilt
+    goos:
+      - darwin
+    goarch:
+      - arm64
+    prebuilt:
+      path: "{{ .ProjectName }}"
+    binary: "{{ .ProjectName }}_v{{ .Version }}"
+
+archives:
+  - format: zip
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+checksum:
+  name_template: "{{ .ProjectName }}_{{ .Version }}_SHA256SUMS"
+  algorithm: sha256
+
+signs:
+  - artifacts: checksum
+    args:
+      - "--batch"
+      - "--local-user"
+      - "{{ .Env.GPG_FINGERPRINT }}"
+      - "--output"
+      - "${signature}"
+      - "--detach-sign"
+      - "${artifact}"
+
+release:
+  draft: true
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^ci:"
