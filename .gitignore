@@ -12,16 +12,17 @@ Thumbs.db
 .env
 .envrc
 
-# IDE config files
+.claude/
+.gemini/
 .vscode/
-.idea/
-*.iml
-.eclipse/
-.settings/
-.project
-.classpath
-nbproject/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+.devcontainer/
+.mcp.json
+CLAUDE.md
+GEMINI.md
+
+vendor/
+
+# Build output
+terraform-provider-macvf
+internal/provider/embedded/network-runner
+
