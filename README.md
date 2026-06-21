@@ -28,7 +28,7 @@ this provider only supports Apple Silicon (darwin/arm64).
 terraform {
   required_providers {
     macvf = {
-      source = "bushtaxi/macvf"
+      source = "buschtaxi/macvf"
     }
   }
 }
@@ -188,7 +188,7 @@ To install the provider locally for development, override it in `$HOME/.terrafor
 ```hcl
 provider_installation {
   dev_overrides {
-    "registry.terraform.io/bushtaxi/macvf" = "/path/to/your/cloned/repo"
+    "registry.terraform.io/buschtaxi/macvf" = "/path/to/your/cloned/repo"
   }
 
   # For all other providers, install them directly from their origin provider

@@ -115,7 +115,7 @@ All resource state is stored directly in Terraform's own state file. No separate
 terraform {
   required_providers {
     macvf = {
-      source = "bushtaxi/macvf"
+      source = "buschtaxi/macvf"
     }
   }
 }

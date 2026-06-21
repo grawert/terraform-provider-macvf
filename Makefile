@@ -1,5 +1,5 @@
 PROVIDER_NAME      := macvf
-PROVIDER_NAMESPACE := bushtaxi
+PROVIDER_NAMESPACE := buschtaxi
 BINARY             := terraform-provider-macvf
 NETWORK_RUNNER     := internal/provider/embedded/network-runner
 VFKIT              := internal/provider/embedded/vfkit
